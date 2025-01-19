@@ -3,8 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Layout from "./components/Layout/Layout.jsx";// Import the custom Layout component
-import Home from "./components/Home/Home.jsx";// Import the custom Home component
+import Layout from "./Layout.jsx"; // Import the custom Layout component
 
 const router = createBrowserRouter([
   {
@@ -13,7 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <App />
       }
     ]
   }

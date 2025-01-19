@@ -1,8 +1,7 @@
 import axios from 'axios';
-
 // Create Axios instance
 const apiClient = axios.create({
-  baseURL: process.env.BASE_URL, // Replace with your backend base URL
+  baseURL: import.meta.env.VITE_BASE_URL, // Replace with your backend base URL
   withCredentials: true, // Include cookies with requests
 });
 
@@ -25,7 +24,7 @@ apiClient.interceptors.response.use(
   async (error) => {
     if (error.response && error.response.status === 401) {
       try {
-        const refreshResponse = await axios.post(`${process.env.BASE_URL}/auth/refresh`, {}, { withCredentials: true }); // Dynamic URL
+        const refreshResponse = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/refresh`, {}, { withCredentials: true }); // Dynamic URL
         const newAccessToken = refreshResponse.data.data.accessToken;
         localStorage.setItem('accessToken', newAccessToken);
 
