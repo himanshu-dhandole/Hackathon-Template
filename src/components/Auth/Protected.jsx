@@ -10,7 +10,7 @@ const Protected = ({ children, authentication }) => {
       try {
         console.log("refreshAccessToken");
        
-        const response = await apiClient.post(`${process.env.BASE_URL}/auth/refresh`, { token: refreshToken });
+        const response = await apiClient.post(`${import.meta.env.BASE_URL}/auth/refresh`, { token: refreshToken });
         const { accessToken } = response.data;
         localStorage.setItem('accessToken', accessToken);
         return true;
