@@ -4,8 +4,6 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Layout from "./components/Layout/Layout.jsx";// Import the custom Layout component
-import Signup from "./components/Auth/Signup.jsx";
-import Login from "./components/Auth/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,14 +15,6 @@ const router = createBrowserRouter([
         element: <App />
       }
     ]
-  },
-  {
-    path: "/signup",
-    element: <Signup/>,
-  },
-  {
-    path: "/login",
-    element: <Login/>
   }
 ]);
 
