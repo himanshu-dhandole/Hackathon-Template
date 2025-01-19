@@ -4,7 +4,9 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Layout from "./components/Layout/Layout.jsx";// Import the custom Layout component
-
+import Signup from "./components/Auth/Signup.jsx";
+import Login from "./components/Auth/Login.jsx";
+import Home from "./components/Home/Home.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -12,9 +14,17 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <App />
+        element: <Home />
       }
     ]
+  },
+  {
+  path: "/login",
+  element: <Login />
+  },
+  {
+    path:"/signup",
+    element: <Signup />
   }
 ]);
 
